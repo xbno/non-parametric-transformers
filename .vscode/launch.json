@@ -13,7 +13,11 @@
             "justMyCode": true,
             "args": [
                 "--data_set",
-                "breast-cancer"
+                "breast-cancer",
+                "--data_loader_nprocs",
+                "4",
+                "--exp_device",
+                "mps"
             ]
         }
     ]

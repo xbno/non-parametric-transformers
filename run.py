@@ -85,9 +85,12 @@ def setup_args(args):
         else:
             print(f'Running model with CUDA')
             exp_device = 'cuda:0'
-    else:
+    elif args.exp_device == "mps":
         print('Running model on MPS.')
-        exp_device = 'mps'
+        exp_device = "mps"
+    else:
+        print('Running model on CPU.')
+        exp_device = 'cpu'
 
     args.exp_device = exp_device
 

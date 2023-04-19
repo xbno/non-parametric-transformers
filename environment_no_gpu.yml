@@ -1,4 +1,4 @@
-name: npt
+name: npt_env
 channels:
   - pytorch
   - defaults
@@ -31,7 +31,7 @@ dependencies:
     - seaborn
     - fairseq
     - dotmap
-    # - pytorch-tabnet
+    # - pytorch-tabnet # downgrades torch below 2.0.0
     # - tabnet
     # - lightgbm
     - jupyterlab
