@@ -7,6 +7,7 @@ import torch
 
 from npt.batch_dataset import NPTBatchDataset
 from npt.datasets.base import BaseDataset
+from npt.datasets.mc_bt import OptionsDataset
 # from npt.datasets.boston_housing import BostonHousingDataset
 from npt.datasets.breast_cancer import (
     BreastCancerClassificationDataset, BreastCancerDebugClassificationDataset)
@@ -30,6 +31,7 @@ from npt.utils.preprocess_utils import (
     get_matrix_from_rows)
 
 DATASET_NAME_TO_DATASET_MAP = {
+    'mc_bt': OptionsDataset,
     'breast-cancer': BreastCancerClassificationDataset,
     'poker-hand': PokerHandDataset,
     'higgs': HiggsClassificationDataset,
