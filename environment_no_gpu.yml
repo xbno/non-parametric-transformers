@@ -4,7 +4,7 @@ channels:
   - defaults
 dependencies:
   - python=3.8
-  - pytorch=1.7
+  - pytorch==2.0
   - torchvision
   - pip
   - pip:
@@ -22,20 +22,21 @@ dependencies:
     - xgboost
     - catboost
     - transformers
-    - pytorch-tabnet
     - numba
     - ogb
     - memory-profiler
     - seaborn
     - tensorboardX
+    - tensorboard
     - seaborn
     - fairseq
     - dotmap
-    - tabnet
-    - lightgbm
+    # - pytorch-tabnet
+    # - tabnet
+    # - lightgbm
     - jupyterlab
     - notebook
     - matplotlib
     - qhoptim
-    - torchvision
+    # - torchvision
     - gpytorch

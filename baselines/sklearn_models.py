@@ -1,8 +1,8 @@
 from functools import partial
 
 from catboost import CatBoostClassifier, CatBoostRegressor
-from lightgbm import LGBMRegressor, LGBMClassifier
-from pytorch_tabnet.tab_model import TabNetClassifier, TabNetRegressor
+# from lightgbm import LGBMRegressor, LGBMClassifier
+# from pytorch_tabnet.tab_model import TabNetClassifier, TabNetRegressor
 from sklearn.ensemble import (
     GradientBoostingClassifier, GradientBoostingRegressor,
     RandomForestRegressor, RandomForestClassifier)
@@ -28,14 +28,14 @@ SKLEARN_CLASSREG_MODELS = {
     'MLP': {
         'reg': MLPRegressor,
         'class': MLPClassifier},
-    'LightGBM': {
-        'reg': LGBMRegressor,
-        'class': LGBMClassifier
-    },
-    'TabNet': {
-        'reg': modified_tabnet(TabNetRegressor),
-        'class': modified_tabnet(TabNetClassifier),
-    },
+    # 'LightGBM': {
+    #     'reg': LGBMRegressor,
+    #     'class': LGBMClassifier
+    # },
+    # 'TabNet': {
+    #     'reg': modified_tabnet(TabNetRegressor),
+    #     'class': modified_tabnet(TabNetClassifier),
+    # },
     'KNN': {
         'reg': KNeighborsRegressor,
         'class': KNeighborsClassifier

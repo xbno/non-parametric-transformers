@@ -1,6 +1,37 @@
-from pytorch_tabnet.metrics import Metric
+# from pytorch_tabnet.metrics import Metric
 from sklearn.metrics import log_loss
 
+
+class Metric:
+    def __call__(self, y_true, y_pred):
+        raise NotImplementedError("Custom Metrics must implement this function")
+
+    @classmethod
+    def get_metrics_by_names(cls, names):
+        """Get list of metric classes.
+        Parameters
+        ----------
+        cls : Metric
+            Metric class.
+        names : list
+            List of metric names.
+        Returns
+        -------
+        metrics : list
+            List of metric classes.
+        """
+        available_metrics = cls.__subclasses__()
+        available_names = [metric()._name for metric in available_metrics]
+        metrics = []
+        for name in names:
+            assert (
+                name in available_names
+            ), f"{name} is not available, choose in {available_names}"
+            idx = available_names.index(name)
+            metric = available_metrics[idx]()
+            metrics.append(metric)
+        return metrics
+    
 
 def add_baseline_random_state(hypers_list, seed):
     random_seed_like_names = ['random_state', 'seed', 'random_seed']
