@@ -1,4 +1,4 @@
-name: npt_env
+name: npt
 channels:
   - pytorch
   - defaults
